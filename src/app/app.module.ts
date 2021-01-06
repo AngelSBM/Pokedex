@@ -7,6 +7,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PokeHomeComponent } from './components/poke-home/poke-home.component';
 import { PokeDetailComponent } from './components/poke-detail/poke-detail.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './shared/material/material.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { PokeDetailComponent } from './components/poke-detail/poke-detail.compon
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
