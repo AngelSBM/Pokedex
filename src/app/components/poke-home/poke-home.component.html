@@ -1,1 +1,11 @@
-<p>poke-home works!</p>
+<div class="row row-cols-1 row-cols-md-4" >
+  <div class="col mb-4 img-fluid" *ngFor="let pokemon of pokemons">
+    <div class="card">
+      <img [src]="pokemon.sprites.front_default" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{ pokemon.name }}</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+</div>
