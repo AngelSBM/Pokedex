@@ -1,5 +1,21 @@
-<mat-toolbar>
+<mat-toolbar class="navbar">
+
+  <mat-toolbar-row class="home-icon">
+    <div class="icon-container">
+      <img class="icon" width="40" height="40" src="assets/icon.jpg" routerLink="/home" alt="">  
+    </div>
+  </mat-toolbar-row>
+
     <mat-toolbar-row>
-            <img class="icon" width="40" height="40" src="assets/icon.jpg" alt="">  
+
+      <form class="search">
+        <mat-form-field class="search-input">
+          <mat-label>Search</mat-label>
+          <input #input (keyup)="buscar(input.value)" matInput placeholder="Pokemon or No.">
+        </mat-form-field>
+    
+    </form>
+
     </mat-toolbar-row>
-</mat-toolbar>
+ 
+</mat-toolbar>            

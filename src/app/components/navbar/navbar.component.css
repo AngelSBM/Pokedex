@@ -2,3 +2,23 @@
     border-radius: 10px;
     cursor: pointer;
 }
+
+.navbar {
+    flex: 1 1 auto;
+}
+
+.home-icon {
+}
+
+.icon-container{
+    text-align: center;
+}
+
+.search {
+    width: 90%;
+    max-width: 90%;
+}
+
+.search-input {
+    width: 100%;
+}

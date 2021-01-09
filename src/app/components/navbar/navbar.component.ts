@@ -12,4 +12,8 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  buscar ( valor: string ){
+    console.log(valor);
+  }
+
 }

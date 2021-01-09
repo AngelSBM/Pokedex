@@ -12,7 +12,7 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 export class PokeHomeComponent implements OnInit {
 
   pokemons: Pokemon[] = [];
-  perro: any;
+  loading: boolean = false;
 
   //////////////////////////////
 
@@ -25,11 +25,13 @@ export class PokeHomeComponent implements OnInit {
     if( pos > max ){
       // console.log('llamar servicio');
 
+      this.loading = true
       this.pokeService.getPokemon().subscribe( (data)=> {
         data.forEach( pokemonNew => {
           this.pokeService.getMoreData(pokemonNew.url)
                 .subscribe( pokemonNewData => {
                   this.pokemons.push( pokemonNewData )
+                  this.loading=false
                 } )
         } )
         
