@@ -51,4 +51,10 @@ export class PokemonService {
      return this.http.get<Pokemon>(url)
   }
 
+  searchPokemon( value : any ){
+
+    return this.http.get<Pokemon>(`${this.baseUrl}/${value}`)
+
+  }
+
 }
