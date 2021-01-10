@@ -23,15 +23,15 @@ export class PokeHomeComponent implements OnInit {
     const max =  document.documentElement.scrollHeight
     
     if( pos > max ){
-      // console.log('llamar servicio');
 
-      this.loading = true
+      if( this.pokeService.cargando == true ){ return }
+
+
       this.pokeService.getPokemon().subscribe( (data)=> {
         data.forEach( pokemonNew => {
           this.pokeService.getMoreData(pokemonNew.url)
                 .subscribe( pokemonNewData => {
                   this.pokemons.push( pokemonNewData )
-                  this.loading = false
                 } )
         } )
         
@@ -42,11 +42,13 @@ export class PokeHomeComponent implements OnInit {
     ////////////////////////////
 
   constructor( private pokeService: PokemonService ) {
+    this.pokeService.offset = 0
    }
 
   ngOnInit(): void {
     
     this.getPokemons();
+
     
   }
 

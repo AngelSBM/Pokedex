@@ -26,12 +26,10 @@ export class PokemonService {
   constructor( public http: HttpClient ) {}
 
   getPokemon(){
-    if( this.cargando ){
-      return
-    }
+
+    if ( this.cargando ){ return }
 
     this.cargando = true;
-
     return this.http.get<PokedexResponse>(`${ this.baseUrl }`, {
       params: this.params
     }).pipe(
