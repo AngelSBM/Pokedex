@@ -1,1 +1,11 @@
-<p>poke-search works!</p>
+<div class="row row-cols-2 row-cols-md-4" *ngIf="pokemon">
+    <div class="col mb-4 img-fluid">
+      <div class="card">
+        <img [src]="pokemon.sprites.front_default" class="card-img-top" role="button" [routerLink]="['/detail', pokemon.id]" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ pokemon.name }}</h5>
+          <!-- <p class="card-text">{{ value.id }}</p> -->
+        </div>
+      </div>
+    </div>
+  </div>
