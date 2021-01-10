@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { Location } from "@angular/common";
 import { PokemonService } from 'src/app/services/pokemon.service';
 import { Pokemon } from 'src/app/interfaces/pokemon.response';
-import { EventEmitter } from 'events';
 
 @Component({
   selector: 'app-navbar',
@@ -14,8 +13,6 @@ export class NavbarComponent implements OnInit {
 
   searchValue: any;
   pokemon : Pokemon;
-  @Output()
-  customerChange:EventEmitter<Customer> =new EventEmitter<Customer>();
       
 
   constructor( private route      : Router,

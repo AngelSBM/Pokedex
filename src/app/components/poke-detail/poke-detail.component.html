@@ -1,1 +1,55 @@
-<p>poke-detail works!</p>
+<div class="container mt-5">
+    
+    <div class="row rounded pb-6" *ngIf="pokemon">
+        <div class="col-12 col-md-6 text-center d-flex">
+            <img [src]="pokemon.sprites.front_default" class="img-fluid w-75 " alt="">
+            <img [src]="pokemon.sprites.back_default" class="img-fluid w-75" alt="">
+        </div>
+    
+        <div class="col-12 col-md-6 info mt-2">
+            <h3 class="text-center">{{ pokemon.name }}</h3>
+            <table class="table text-center">
+                <tbody>
+                    <tr>
+                        <th><span>Height: </span></th>
+                        <th> {{ pokemon.height }}0 cm</th>
+                    </tr>
+                    <tr>
+                        <th><span>weigth: </span></th>
+                        <th>{{ pokemon.weight }} pnds.</th>
+                    </tr>
+                    <tr>
+                        <th><span>Types: </span></th>
+                        <th>
+                            <span>
+                                {{ pokemon.types[0].type.name }}
+                            </span>  
+                            <span *ngIf="pokemon.types.length > 0">
+                               - {{ pokemon.types[1].type.name }}
+                            </span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th><span>Abilities: </span></th>
+                        <th>
+                            <span>
+                                {{ pokemon.abilities[0].ability.name }}
+                            </span>  
+                            <span *ngIf="pokemon.types.length > 0">
+                               - {{ pokemon.abilities[1].ability.name }}
+                            </span>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="button-container text-center mt-1 mb-2">
+                <button (click)="back()" class="btn">
+                    <i class="fas fa-long-arrow-alt-left"></i> Go Back
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+</div>

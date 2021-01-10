@@ -1,0 +1,8 @@
+.card {
+    background-color: #f00000;
+}
+
+.card .title {
+    font-size: 17px;
+    font-weight: bold;
+}
