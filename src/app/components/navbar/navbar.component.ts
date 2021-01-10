@@ -40,4 +40,9 @@ export class NavbarComponent implements OnInit {
 
   }
 
+  
+  cleanInput ( input ){
+    input.value = ''
+  }
+
 }

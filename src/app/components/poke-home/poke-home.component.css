@@ -1,5 +1,6 @@
 .container-father {
-    background-color: 	#222224;
+    max-width: 80%;
+    margin: auto;
 }
 
 .card {
@@ -9,4 +10,8 @@
 .card .title {
     font-size: 17px;
     font-weight: bold;
+}
+
+.icon {
+    color: white;
 }

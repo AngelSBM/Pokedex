@@ -31,7 +31,7 @@ export class PokeHomeComponent implements OnInit {
           this.pokeService.getMoreData(pokemonNew.url)
                 .subscribe( pokemonNewData => {
                   this.pokemons.push( pokemonNewData )
-                  this.loading=false
+                  this.loading = false
                 } )
         } )
         

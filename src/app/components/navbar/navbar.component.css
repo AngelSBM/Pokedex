@@ -7,9 +7,6 @@
     flex: 1 1 auto;
 }
 
-.home-icon {
-}
-
 .icon-container{
     text-align: center;
 }
@@ -22,3 +19,4 @@
 .search-input {
     width: 100%;
 }
+

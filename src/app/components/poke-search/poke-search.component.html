@@ -1,6 +1,10 @@
 <div class="container-father">
   
-  <div class="container mt-5-5">
+  <div class="text-center" *ngIf="searching === true">
+    <i class="fas fa-sync-alt fa-spin fa-6x icon mt-5"></i>
+  </div>
+
+  <div class="container mt-5-5" *ngIf="pokemon && searching === false">
   
     <div class="row row-cols-2 row-cols-md-4">
       <div class="col mb-4 img-fluid">

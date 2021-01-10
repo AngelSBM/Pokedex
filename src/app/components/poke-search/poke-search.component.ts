@@ -13,6 +13,7 @@ export class PokeSearchComponent implements OnInit {
 
   value: any;
   pokemon: Pokemon;
+  searching: boolean = false;
 
 
   constructor( private activatedRoute : ActivatedRoute,
@@ -33,8 +34,14 @@ export class PokeSearchComponent implements OnInit {
   buscarPokemon(){
    this.pokeService.searchPokemon( this.value )
         .subscribe( pokemon => {
+          
           this.pokemon = pokemon
-          console.log(this.value);
+          this.searching = false
+         
+        }, error => {
+          
+          this.searching = true
+
         } )
   }
 
