@@ -1,10 +1,12 @@
+<!-- container used for margin the contain -->
 <div class="container-father">
-  
+
+  <!-- While the component is searching the pokemon, shows the loading icon --> 
   <div class="text-center" *ngIf="searching === true">
     <i class="fas fa-sync-alt fa-spin fa-6x icon mt-5"></i>
   </div>
 
-  <div class="container mt-5-5" *ngIf="pokemon && searching === false">
+  <div class="container mt-5" *ngIf="pokemon && searching === false">
   
     <div class="row row-cols-2 row-cols-md-4">
       <div class="col mb-4 img-fluid">
@@ -13,7 +15,6 @@
           <img [src]="pokemon.sprites.front_default" class="card-img-top" role="button" [routerLink]="['/detail', pokemon.id]" alt="...">
           <div class="card-body">
             <h5 class="text-center title">{{ pokemon.name }}</h5>
-            <!-- <p class="card-text">{{ pokemon.id }}</p> -->
           </div>
         </div>
       </div>

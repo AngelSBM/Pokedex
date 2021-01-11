@@ -19,28 +19,31 @@ export class PokeSearchComponent implements OnInit {
   constructor( private activatedRoute : ActivatedRoute,
                private pokeService     : PokemonService ) {
      this.activatedRoute.paramMap.subscribe( param => {
+
+      //Each time the param change, the execute the function to look the pokemon with that param
        this.value = param.get('value');
-       this.buscarPokemon()
+       this.buscarPokemon();
      } )
     
    }
 
   ngOnInit(): void {
-
-      this.buscarPokemon()
       
   }
 
   buscarPokemon(){
    this.pokeService.searchPokemon( this.value )
         .subscribe( pokemon => {
+
+          //We got the pokemon, so "searching" must be false
+          this.searching = false;
           
-          this.pokemon = pokemon
-          this.searching = false
+          this.pokemon = pokemon;
          
         }, error => {
           
-          this.searching = true
+          //If loading is true, it means that is looking for the pokemon or it doesn´t exists, so [ while loading === true { showLoadingIcon(); } ]
+          this.searching = true;
 
         } )
   }

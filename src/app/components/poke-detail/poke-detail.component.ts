@@ -17,22 +17,25 @@ export class PokeDetailComponent implements OnInit {
   constructor( private route       : ActivatedRoute,
                private pokeService : PokemonService,
                private location    : Location ) {
-      this.id = this.route.snapshot.paramMap.get('id')   
+      
+    /* Get the params to look the pokemon with that name or id and show it in the HTML */                
+      this.id = this.route.snapshot.paramMap.get('id');
+      
    }
 
   ngOnInit(): void {
 
     this.pokeService.searchPokemon(this.id)
           .subscribe( pokeData => {
+
             this.pokemon = pokeData;
-            console.log(this.pokemon.types);
             
           } )
 
   }
 
   back () {
-    this.location.back()
+    this.location.back();
   }
 
 

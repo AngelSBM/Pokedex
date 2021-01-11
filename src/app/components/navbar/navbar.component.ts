@@ -1,7 +1,5 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { Location } from "@angular/common";
-import { PokemonService } from 'src/app/services/pokemon.service';
 import { Pokemon } from 'src/app/interfaces/pokemon.response';
 
 @Component({
@@ -9,34 +7,22 @@ import { Pokemon } from 'src/app/interfaces/pokemon.response';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
 
-  searchValue: any;
-  pokemon : Pokemon;
-      
+  // The value must be a string or number
+  searchValue: any;      
 
-  constructor( private route      : Router,
-               private location   : Location,
-               private pokeServive: PokemonService) { }
+  constructor( private route : Router ) { }
 
-  ngOnInit(): void {
-  }
 
   buscar ( valor: string ){
     
-    //If user types, go to result pages, else go back to home
+    //If user types, go to search-component with the input value as a param, else go back to home-component
     if( valor.length !== 0 ){
       this.route.navigate(['search', valor])
     } else {
       this.route.navigate(['home'])
     }
-
-    // this.pokeServive.searchPokemon( valor )
-    //     .subscribe( data => {
-    //       this.pokemon = data;
-    //       console.log(this.pokemon);
-          
-    //     } )
 
   }
 

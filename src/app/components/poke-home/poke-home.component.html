@@ -1,29 +1,31 @@
+<!-- Container for use margin to all the information -->
 <div class="container-father">
   
+  <!-- this container uses bootstrap for margin the main information -->
   <div class="container mt-5">
   
+    <!-- row with allthe information -->
     <div class="row row-cols-2 row-cols-md-4">
+
+      <!-- divition of the row in columns -->
       <div class="col mb-4 img-fluid" *ngFor="let pokemon of pokemons">
-        <div class="card p-2">
+
+        <!-- the card with an animation in styles.css --> 
+        <div class="card p-2 animated fadeIn">
+
           <span class="text-left font-weight-bold"><i class="fab fa-galactic-republic"></i> No. {{ pokemon.id }}</span>
           <img [src]="pokemon.sprites.front_default" class="card-img-top" role="button" [routerLink]="['/detail', pokemon.id]" alt="...">
           <div class="card-body">
             <h5 class="text-center title">{{ pokemon.name }}</h5>
-            <!-- <p class="card-text">{{ pokemon.id }}</p> -->
           </div>
         </div>
       </div>
-    </div>
-    
-    
-    <div class="text-center" *ngIf="loading === true">
-      <i class="fas fa-sync-alt fa-spin fa-6x icon"></i>
-    </div>
+    </div>   
   </div>
-
-
 </div>
 
 
-
-
+<!-- Loading icon using font-awesome, only it appears when loading === true -->
+    <div class="text-center" *ngIf="loading === true">
+      <i class="fas fa-sync-alt fa-spin fa-6x icon"></i>
+    </div>

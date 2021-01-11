@@ -1,17 +1,23 @@
+<!-- NavBar using the Angular Material -->
 <mat-toolbar class="navbar">
 
+<!-- navbar row with the icon -->
   <mat-toolbar-row class="home-icon">
     <div class="icon-container">
       <img class="icon" width="40" height="40" src="assets/icon.jpg" (click)="cleanInput(input)" routerLink="/home" alt="">  
     </div>
   </mat-toolbar-row>
 
+<!-- navbar row with the search-input -->  
     <mat-toolbar-row>
 
       <form class="search">
         <mat-form-field class="search-input">
           <mat-label>Search</mat-label>
+
+          <!-- each time we type, we execute buscar() with the input value -->
           <input #input (keyup)="buscar(input.value)" matInput placeholder="Pokemon or No.">
+
         </mat-form-field>
     
     </form>

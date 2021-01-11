@@ -1,35 +1,51 @@
+<!-- this container aplies the margin to the target with pokemon information -->
 <div class="container mt-5">
     
-    <div class="row rounded pb-6" *ngIf="pokemon">
+    <!-- row with two columns, one column contains the pokemon images and the other got the information about it, also uses animation effects from styles.css -->
+    <div class="row rounded pb-6 animated fadeIn" *ngIf="pokemon">
+
+        <!-- column with the images and styles to make it responsive -->
         <div class="col-12 col-md-6 text-center d-flex">
             <div class="img-container w-50">
+
                 <img [src]="pokemon.sprites.front_default" class="img-fluid w-100" alt="">
+
             </div>
+
             <div class="img-container w-50">
+
                 <img [src]="pokemon.sprites.back_default" class="img-fluid w-100" alt="">
+
             </div>
         </div>
     
+        <!-- the other column, the pokemon information is displayed on a table -->
         <div class="col-12 col-md-6 info mt-2">
+
             <h3 class="text-center">{{ pokemon.name }}</h3>
+
             <table class="table text-center">
                 <tbody>
                     <tr>
+                        <th><span>No. Pokedex: </span></th>
+                        <th> {{ pokemon.id }}</th>
+                    </tr>
+                    <tr>
                         <th><span>Height: </span></th>
-                        <th> {{ pokemon.height }}0 cm</th>
+                        <th> {{ pokemon.height }}0 CM</th>
                     </tr>
                     <tr>
                         <th><span>weigth: </span></th>
-                        <th>{{ pokemon.weight }} pnds.</th>
+                        <th>{{ pokemon.weight | weight }} kg</th>
                     </tr>
                     <tr>
                         <th><span>Types: </span></th>
                         <th>
                             <span>
-                                {{ pokemon.types[0].type.name }}
+                                {{ pokemon.types[0].type.name | uppercase }}
                             </span>  
                             <span *ngIf="pokemon.types.length > 0">
-                               / {{ pokemon.types[1].type.name }}
+                               / {{ pokemon.types[1].type.name | uppercase }}
                             </span>
                         </th>
                     </tr>
@@ -37,16 +53,17 @@
                         <th><span>Abilities: </span></th>
                         <th>
                             <span>
-                                {{ pokemon.abilities[0].ability.name }}
+                                {{ pokemon.abilities[0].ability.name | uppercase }}
                             </span>  
                             <span *ngIf="pokemon.abilities.length > 0">
-                               / {{ pokemon.abilities[1].ability.name }}
+                               / {{ pokemon.abilities[1].ability.name | uppercase }}
                             </span>
                         </th>
                     </tr>
                 </tbody>
             </table>
 
+        <!-- button that go back, it doesn´t use the routes, it redirect ud using Location -->
             <div class="button-container text-center mt-1 mb-2">
                 <button (click)="back()" class="btn">
                     <i class="fas fa-long-arrow-alt-left"></i> Go Back

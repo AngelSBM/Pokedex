@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { PokeSearchComponent } from './components/poke-search/poke-search.component';
+import { WeightPipe } from "./pipes/weight.pipe";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PokeSearchComponent } from './components/poke-search/poke-search.compon
     NavbarComponent,
     PokeHomeComponent,
     PokeDetailComponent,
-    PokeSearchComponent
+    PokeSearchComponent,
+    WeightPipe
   ],
   imports: [
     BrowserModule,
