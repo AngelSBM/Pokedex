@@ -19,9 +19,9 @@ export class NavbarComponent {
     
     //If user types, go to search-component with the input value as a param, else go back to home-component
     if( valor.length !== 0 ){
-      this.route.navigate(['search', valor])
+      this.route.navigate(['/search', valor])
     } else {
-      this.route.navigate(['home'])
+      this.route.navigate(['/home'])
     }
 
   }
