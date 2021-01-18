@@ -5,22 +5,29 @@
 .row {
     border-style: dashed;
     border-width: 10px;
-    background-color: #f00000;
+    background-color: #f0f0f0;
 }
 
+
 .info table {
-    color: #f0f0f0;
+    color: black;
 }
 
 .info h3 {
     font-weight: bold;
     font-size: 17px;
-    color: #f0f0f0;
+    color: #222222;
     
 }
 
 .button-container button{
-    background-color: black;
-    color: #f00000;
-    width: 100%;
+    background-color: #222224;
+    border: 2px solid #222224;
+    color: #f0f0f0;
+    width: 90%;
+}
+
+.button-container button:hover {
+    color: #222222;
+    background-color: #f0f0f0;
 }

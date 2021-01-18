@@ -11,7 +11,7 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class PokeSearchComponent implements OnInit {
 
-  value: any;
+  value: string;
   pokemon: Pokemon;
   searching: boolean = false;
 
@@ -21,7 +21,7 @@ export class PokeSearchComponent implements OnInit {
      this.activatedRoute.paramMap.subscribe( param => {
 
       //Each time the param change, the execute the function to look the pokemon with that param
-       this.value = param.get('value');
+       this.value = param.get('value').toLowerCase();
        this.buscarPokemon();
      } )
     

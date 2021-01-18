@@ -13,7 +13,7 @@
         <!-- the card with an animation in styles.css --> 
         <div class="card p-2 animated fadeIn">
 
-          <span class="text-left font-weight-bold"><i class="fab fa-galactic-republic"></i> No. {{ pokemon.id }}</span>
+          <span class="text-left font-weight-bold"><img src="./../../../assets/pokeball.png" width="17"> No. {{ pokemon.id }}</span>
           <img [src]="pokemon.sprites.front_default" class="card-img-top" role="button" [routerLink]="['/detail', pokemon.id]" alt="...">
           <div class="card-body">
             <h5 class="text-center title">{{ pokemon.name }}</h5>
